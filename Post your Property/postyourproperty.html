@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="postyourproperty.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="#menu">Menu</a>
+        <a href="#contactus">Contact US</a> 
+        <a class="active" href="#postyourproperty">Post your Property</a>
+        <a href="#login_register">Login/Register</a>
+      </div>
+    <div >
+        <div class="headline"><p>Post your property<br>Group 20</p></div>
+        <div class="aform">
+            <p>1. Basic Details</p>
+            <h4>you're looking to...</h4>
+            <form action="">
+                <input type="radio" id="sell" name="looking_to">
+                <label for="sell">SELL</label><br>
+                <input type="radio" id="rent\lease" name="looking_to">
+                <label for="rent\lease">Rent\lease</label><br>
+                <input type="radio" id="pg" name="looking_to">
+                <label for="pg">PG</label><br>
+    
+                <h4>And it's a..</h4>
+    
+                <input type="radio" id="residential" name="p_type">
+                <label for="residential">Residential</label><br>
+                <input type="radio" id="Commercial" name="p_type">
+                <label for="Commercial">commercial</label><br>
+                <input type="radio" id="Apartment" name="p_type">
+                <label for="Apartment">Apartment</label><br>
+                <input type="radio" id="Land" name="p_type">
+                <label for="Land">Land</label><br>
+    
+        </div>
+        <div class="bform">
+            <p>2. Location Details</p>
+            <h4>Where is your property located?</h4>
+
+            <label for="city">City</label><br>
+            <input type="text" name="city" id="city" required><br>
+            <label for="Apartment_society">Apartment\society</label><br>
+            <input type="text" name="Apartment_society" id="Apartment\society" required><br>
+            <label for="Locality">Locality</label><br>
+            <input type="text" name="Locality" id="Locality" required><br>
+            <label for="sublocality">Sub locality(Optional)</label><br>
+            <input type="text" name="sublocality" id="sublocality"><br>
+            <label for="houseno">House no.(Optional)</label><br>
+            <input type="text" name="houseno" id="houseno"><br>
+            <br>
+            <input type="button" value="Continue">
+        </div>
+
+        <div class="cform"> 
+            <p>3. Tell us about your property</p>
+            <h4>Add room details</h4>
+            <p> No. of Bedrooms</p>
+            <select name="bedrooms" id="bedrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more_than_5">More than 5</option>
+            </select>
+
+            <p> No. of Bathrooms</p>
+            <select name="Bathrooms" id="Bathrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more_than_5">More than 5</option>
+
+            </select>
+
+            <p> No. of Balconies</p>
+            <select name="Balconies" id="Balconies">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="more_than_5">More than 5</option>
+
+            </select>
+        </div> 
+        <div>
+            <h4>Other Rooms(Optional)</h4>
+            <input type="checkbox" id="PoojaRoom" name="PoojaRoom">
+            <label for="PoojaRoom">Pooja Room</label><br>
+            <input type="checkbox" id="StudyRoom" name="StudyRoom">
+            <label for="StudyRoom">Study Room</label><br>
+            <input type="checkbox" id="ServantRoom" name="ServantRoom">
+            <label for="ServantRoom">Servant Room</label><br>
+            <input type="checkbox" id="StoreRoom" name="StoreRoom">
+            <label for="StoreRoom">Store Room</label><br>
+            <br>
+            <h4>Furnishing (Optional)</h4>
+            <input type="Checkbox" id="Furnished" name="furnished">
+            <label for="Furnished">Furnished</label><br>
+            <input type="checkbox" id="SemiFurnished" name="Semifurnished">
+            <label for="Semifurnished">Semifurnished</label><br>
+            <input type="checkbox" id="Unfurnished" name="Unfurnished">
+            <label for="Unfurnished">Unfurnished</label><br>
+            <br>
+            <h4>Reserved Parking (Optional)</h4>
+            <label for="CoveredParking">Covered Parking</label>
+            <input type="number" id="CoveredParking" name="CoveredParking" min="0" max="5"><br>
+            <label for="OpenParking">Open Parking</label>
+            <input type="number" id="OpenParking" name="OpenParking" min="0" max="5"><br>
+            <br>
+
+        </div>
+
+         <div class="dform">
+            <p>Add Area details</p>
+            <input type="text" id="Carpet_Area" placeholder="Carpet Area">
+            <label for="Carpet_Area"></label>
+            <select name="Area_Unit" id="Area_Unit" size="1">
+                <option value="sq.ft">sq.ft</option>
+                <option value="sq.yards">sq.yards</option>
+                <option value="sq.m">sq.m</option>
+                <option value="acres">acres</option>
+                <option value="sq.km">sq.km</option>
+                <option value="sq.hm">sq.hm</option>
+                <option value="sq.cm">sq.cm</option>
+            </select>
+
+            <h4>Availability Status</h4>
+            <input type="button" value="Ready to move">
+            <input type="button" value="Under Construction">
+            <p>4. Gallery</p>
+            <h4>Add photos of your property</h4>
+            <label for="myflie">Select a file:</label><br>
+            <input type="file" name="myfile" id="myfile"><br><br>
+
+            <input type="submit">
+         </div>  
+         <div>
+             <p>5. Pricing and others</p>
+             <h4>Price Details</h4>
+             <input type="text" id="ExpectedPrice" placeholder="₹ Expected Price">
+             <input type="text" id="Pricepersqft" placeholder="₹ Price per sq.ft"><br>
+             <input type="text" id="Priceinwords" placeholder="Price in words" size="70">
+             <input type="checkbox" id="Allinclusiveprice" name="Allinclusiveprice">
+             <label for="Allinclusiveprice">All inclusive Price</label><br>
+             <input type="checkbox" id="taxandgovtchargesexcluded" name="taxandgovtchargesexcluded">
+             <label for="taxandgovtchargesexcluded">Tax and Govt. charges excluded</label><br>
+             <input type="checkbox" id="PriceNegotiable" name="PriceNegotiable">
+             <label for="PriceNegotiable">Price Negotiable</label><br>
+         </div>
+
+           
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
