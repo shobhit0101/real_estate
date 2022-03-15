@@ -29,6 +29,19 @@
     border-bottom: 1px solid #F3C5C5;
     /* transition:  5s; */
 }
+.navbtn {
+
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: .9em;
+    color: #F3C5C5;
+    margin-right: 5px;
+    border-bottom: 0px;
+}
+.navbtn:hover {
+    color: #F6F6F6;
+    border-bottom: 1px solid #F3C5C5;
+}
  /* .imagehead {
     border: 2px solid gray;
    
@@ -160,7 +173,105 @@
 .searchresponsive {
     display: none;
 }
- 
+
+
+/* login modal */
+
+.form-modal {
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif
+}
+
+.loginbtn {
+    background-color: #7900FF;
+    color: #F6F6F6;    
+}
+.loginbtn:hover {
+    background-color: #F6F6F6;
+    color: #7900FF;
+    border: 1px solid #7900FF;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    
+}
+
+.form-control {
+    box-shadow: none !important;   
+}
+#loginRememberme {
+    font-size: 10px;
+}
+.modalfootercontainer {
+    justify-content: space-between;
+}
+.cancel {
+    background-color: #797372;
+    color: #F6F6F6;
+}
+.cancel:hover {
+    background-color: #5a5554;
+    color: #F6F6F6;
+}
+
+.forgotpassword {
+    color:#7900FF;
+}
+.forgotpassword:hover{
+    color: #170055;
+}
+
+.logintitle {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+
+/* sign Up modal */
+
+.signuptitle {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+.signUpbelowheadertext {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 12px;
+}
+
+.signUpabovefootertext{
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 11px;
+}
+
+#SignUpRememberme {
+    font-size: 10px;
+}
+
+.signupbtn{
+    background-color: #7900FF;
+    color: #F6F6F6; 
+}
+.signupbtn:hover{
+    background-color: #F6F6F6;
+    color: #7900FF;
+    border: 1px solid #7900FF;
+}
+}
+
+
 @media screen and (max-width:480px){
      .description{
         text-align: center;
