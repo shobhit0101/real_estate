@@ -42,6 +42,13 @@
     color: #F6F6F6;
     border-bottom: 1px solid #F3C5C5;
 }
+
+.active {
+    background-color: #7579E7   ;
+    border-radius: 10%;
+    
+}
+
  /* .imagehead {
     border: 2px solid gray;
    
@@ -269,7 +276,10 @@
     color: #7900FF;
     border: 1px solid #7900FF;
 }
-}
+
+
+
+
 
 
 @media screen and (max-width:480px){
