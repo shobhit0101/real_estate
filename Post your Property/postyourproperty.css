@@ -42,6 +42,13 @@
     color: #F6F6F6;
     border-bottom: 1px solid #F3C5C5;
 }
+
+.active {
+    background-color: #7579E7   ;
+    border-radius: 10%;
+    
+}
+
  /* .imagehead {
     border: 2px solid gray;
    
@@ -270,6 +277,17 @@
     border: 1px solid #7900FF;
 }
 
+/* PostYourProperty Content Starts here  */
+.postyourpropertycontainer {
+    width: 100vw;
+    height: 90vh;
+    background-color: #ffffff;  
+}
+
+
+
+
+/* PostYourProperty Content ends here */
 
 
 
@@ -297,7 +315,6 @@
          border-radius: 2px;
      }
 }
-
 
 @media screen and (max-width:800px){
     .search_container{
