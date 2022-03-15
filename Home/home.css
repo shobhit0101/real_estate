@@ -277,8 +277,17 @@
     border: 1px solid #7900FF;
 }
 
+/* PostYourProperty Content Starts here  */
+.postyourpropertycontainer {
+    width: 100vw;
+    height: 90vh;
+    background-color: #ffffff;  
+}
 
 
+
+
+/* PostYourProperty Content ends here */
 
 
 
