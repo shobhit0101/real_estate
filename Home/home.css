@@ -295,6 +295,10 @@
     color: white;
 }
 
+.list-unstyled a{
+    font-size: 30px;
+}
+
 
 
 /* PostYourProperty Content ends here */
