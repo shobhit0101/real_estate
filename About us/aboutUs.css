@@ -326,6 +326,10 @@
      }
 }
 
+.list-unstyled a{
+    font-size: 30px;
+}
+
 @media screen and (max-width:800px){
     .search_container{
         display: none;
