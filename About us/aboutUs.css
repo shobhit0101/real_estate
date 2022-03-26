@@ -43,20 +43,21 @@
     border-bottom: 1px solid #ffffff;
 }
 
-.active {
+ /* /* .active {
     background-color: #242323  ;
     /* border-radius: 10%; */
     
-}
+}  */
+
 
  /* .imagehead {
     border: 2px solid gray;
    
     margin: 20px;
     box-shadow: gray ;
-}  */
+}  */ */
 /* .header_image {
-    width: 100%;
+    width: 100%;S
     height: 87vh;
     opacity: 0.8 ;
 }
@@ -291,7 +292,7 @@
     background-color: #ffffff;  
 }
 
-.txtColour{
+.textColor{
     color: white;
 }
 
