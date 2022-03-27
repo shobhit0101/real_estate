@@ -344,4 +344,15 @@
     font-weight: 600;
   }
 
+  .home-content2 {
+     text-align: center;
+    padding: 30px;
+    font-family: Arial;
+  } 
+
+  .home-content2 h5{
+    font-family: 'Poppins', sans-serif;
+    color: #96968d;
+  }
+
   
