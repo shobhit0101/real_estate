@@ -292,12 +292,12 @@
 }
 
 .txtColour{
-    color: #ffffff;
+    color: white;
 }
 
 
-/* PostYourProperty Content ends here */
 
+/* PostYourProperty Content ends here */
 
 /* footer css start*/
 
@@ -305,7 +305,7 @@
 
     /* background-color: rgb(223, 217, 217); */
     background-image: linear-gradient(180deg, #777373, #000000);
-    margin-top: 250px;
+    margin-top: 25px;
 }
 .footer-features-text{
     font-size: 25px;
@@ -328,9 +328,6 @@
 }
 
 /* footer css ends */
-
-
-
 
 @media screen and (max-width:480px){
      .description{
@@ -355,6 +352,10 @@
          border: 1px solid #F6F6F6;
          border-radius: 2px;
      }
+}
+
+.list-unstyled a{
+    font-size: 30px;
 }
 
 @media screen and (max-width:800px){
