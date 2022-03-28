@@ -366,10 +366,15 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
+.loginbox{
+  background-color: black;
+  width: 98.9vw;
+  height: 90vh;
+}
 .container {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   min-height: 90vh;
   overflow: hidden;
 }
