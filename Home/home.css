@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,300;1,400;1,500;1,700;1,900&family=Supermercado+One&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -64,9 +63,6 @@
 .sepia {
     filter: saturate(2);
 }  */
-
-
-/* SEARCH HEADER CSS starts here*/
 .search_header{
     /* background-color:#7900FF; */
     background-image: linear-gradient(180deg, #000000, #777373);
@@ -191,8 +187,102 @@
 .searchresponsive {
     display: none;
 }
-/* SEARCH HEADER CSS ends here*/
 
+
+/* login modal */
+
+.form-modal {
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif
+}
+
+.loginbtn {
+    background-color: #7900FF;
+    color: #F6F6F6;    
+}
+.loginbtn:hover {
+    background-color: #F6F6F6;
+    color: #7900FF;
+    border: 1px solid #7900FF;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    
+}
+
+.form-control {
+    box-shadow: none !important;   
+}
+#loginRememberme {
+    font-size: 10px;
+}
+.modalfootercontainer {
+    justify-content: space-between;
+}
+.cancel {
+    background-color: #797372;
+    color: #F6F6F6;
+}
+.cancel:hover {
+    background-color: #5a5554;
+    color: #F6F6F6;
+}
+
+.forgotpassword {
+    color:#7900FF;
+}
+.forgotpassword:hover{
+    color: #170055;
+}
+
+.logintitle {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+
+/* sign Up modal */
+
+.signuptitle {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+.signUpbelowheadertext {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 12px;
+}
+
+.signUpabovefootertext{
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-size: 11px;
+}
+
+#SignUpRememberme {
+    font-size: 10px;
+}
+
+.signupbtn{
+    background-color: #7900FF;
+    color: #F6F6F6; 
+}
+.signupbtn:hover{
+    background-color: #F6F6F6;
+    color: #7900FF;
+    border: 1px solid #7900FF;
+}
 
 /* PostYourProperty Content Starts here  */
 .postyourpropertycontainer {
@@ -202,17 +292,20 @@
 }
 
 .txtColour{
-    color: #ffffff;
+    color: white;
 }
+
+
+
 /* PostYourProperty Content ends here */
 
-
 /* footer css start*/
+
 .foot{
 
     /* background-color: rgb(223, 217, 217); */
     background-image: linear-gradient(180deg, #777373, #000000);
-    margin-top: 250px;
+    margin-top: 25px;
 }
 .footer-features-text{
     font-size: 25px;
@@ -233,10 +326,8 @@
 .mobilecolor{
     color: white;
 }
+
 /* footer css ends */
-
-
-
 
 @media screen and (max-width:480px){
      .description{
@@ -263,6 +354,10 @@
      }
 }
 
+.list-unstyled a{
+    font-size: 30px;
+}
+
 @media screen and (max-width:800px){
     .search_container{
         display: none;
@@ -283,76 +378,3 @@
 
 }
 
-/* HOME PAGE CONTENT STARTS HERE */
-.home-content {
-    text-align: center;
-    padding: 30px;
-    font-family: Arial;
-  }
-  .home-content h3{
-    font-family: 'Poppins', sans-serif;
-    color: #96968d;
-  }
-  
-  .a-box {
-    display: inline-block;
-    width: 240px;
-    text-align: center;
-  }
-  
-  .img-container {
-      height: 200px;
-      width: 200px;
-      overflow: hidden;
-      border-radius: 0px 0px 20px 20px;
-      display: inline-block;
-  }
-  
-  .img-container img {
-      transform: skew(0deg, -13deg);
-      height: 250px;
-      margin: -35px 0px 0px -70px;
-  }
-  
-  .inner-skew {
-      display: inline-block;
-      border-radius: 20px;
-      overflow: hidden;
-      padding: 0px;
-      transform: skew(0deg, 13deg);
-      font-size: 0px;
-      margin: 30px 0px 0px 0px;
-      background: #c8c2c2;
-      height: 250px;
-      width: 200px;
-  }
-  
-  .text-container {
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
-    padding: 120px 20px 20px 20px;
-    border-radius: 20px;
-    background: rgb(192, 190, 158);
-    margin: -120px 0px 0px 0px;
-    line-height: 19px;
-    font-size: 14px;
-  }
-  
-  .text-container h3 {
-    margin: 20px 0px 10px 0px;
-    color: #000000;
-    font-size: 30px;
-    font-weight: 600;
-  }
-
-  .home-content2 {
-     text-align: center;
-    padding: 30px;
-    font-family: Arial;
-  } 
-
-  .home-content2 h5{
-    font-family: 'Poppins', sans-serif;
-    color: #96968d;
-  }
-
-  
