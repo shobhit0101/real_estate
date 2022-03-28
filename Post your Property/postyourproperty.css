@@ -285,14 +285,107 @@
 }
 
 /* PostYourProperty Content Starts here  */
-.postyourpropertycontainer {
-    width: 100vw;
-    height: 90vh;
-    background-color: #ffffff;  
+
+/* form css starts here */
+
+
+.form-container{
+    background-color:#ffffff ;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 30px 0 30px 0;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.form-section-container{
+    margin: 20px;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+   
+}
+
+.textbox {
+    width: 30vw;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.selectbox {
+    width: 30vw; 
+}
+
+
+/* form css ends here */
+
+
+/* howtopost css starts here */
+
+
+
+.howtopostmaincontainer{
+    margin-top: 20px;
+    /* padding: 20px; */
+    /* border: 1px solid black; */
+}
+
+.howtoposttext{
+    text-align: center;
+}
+
+.howtopostcardContainer {
+    margin: auto;
+    padding: 0px 20px;
+    width: 100vw ;
+    height: 45vh ;
+    background-color: #ffffff;
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 
+.howtopost-card {
+   height: 40vh;
+   /* border: 1px solid black; */
+   border: 0px;
+}
+
+.card-logo-howtopost{
+    height: 4rem;
+    
+}
+.title-howtopost{
+   color: #595B83;
+}
+.text-howtopost{
+   color: #03506F;
+}
+
+.postyourproperty-button{
+    text-align: center;
+    margin-bottom: 20px ;
+}
+
+.postyourproperty-button-css{
+    border: 2px solid black;
+    padding: 10px 50px;
+    background-color: #000000;
+    color: white;
+    font-size: 15px;
+   
+   
+}
+
+
+.postyourproperty-button-css:hover{
+    color: #b5fa9a;
+}
+
+/* how to post ends here */
 
 /* PostYourProperty Content ends here */
 
