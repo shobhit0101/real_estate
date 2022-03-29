@@ -44,7 +44,9 @@
                         <a class="nav-link" href="postyourproperty">Post Property</a>
                     </li>
                     <li class="nav-item  text-center">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <button type="button" class="btn navbtn" data-bs-toggle="modal" data-bs-target="#ContactUsmodal">
+                            Contact Us
+                          </button>
                     </li>
                     <li class="nav-item  text-center">
                         <a class="nav-link" href="login"><i class="fa fa-user-circle" style="font-size: 15px;" aria-hidden="true"></i> Account</a>
@@ -54,103 +56,110 @@
         </div>
     </nav>
 
-
+    <!-- CONTACT US MODAL -->
+    <%- include('./partials/ContactUs'); %>
 
 
    
 
     <!-- About Us Content -->
 
-    <div class="heading" style="margin-left: 55px; margin-top: 25px;">
-        <h1>About Us</h1>
+  <div class="heading" style="margin-left: 55px; margin-top: 15px;">
+    <h1>About Us</h1>
+  </div>
+
+  <div class="container my-4 border border-secondary border-3 rounded-3">
+    <div class="row featurette d-flex justify-content-center align-items-center my-4">
+      <div class="col-md-7 textColor bg-dark">
+        <h2 class="featurette-heading"
+          style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 50px; text-align: center; color: aliceblue;">SHOBHIT
+          GUPTA
+        </h2>
+        <p class="lead"
+          style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">Indian
+          Institute of Information Technology Sricity
+        </p>
+        <p style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">UG2</p>
+        <br> <br>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" width="250" height="250" src="../images/pp1.png" alt="">
+
+      </div>
     </div>
+    <hr>
 
-    <div class="container my-4 border border-secondary border-3 rounded-3">
-        <div class="row featurette d-flex justify-content-center align-items-center my-4">
-            <div class="col-md-7 txtColour bg-dark">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">Faded Heading.</span>
-                </h2>
-                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam hic, molestiae labore
-                    quis iure dolore iste tempora dolor consectetur harum architecto nisi culpa animi sequi. Commodi
-                    aperiam debitis natus aliquam exercitationem dolores incidunt officiis voluptas explicabo ea unde
-                    eos adipisci perspiciatis nihil, sapiente, nisi inventore qui mollitia laboriosam quod neque?
-                </p>
-            </div>
-            <div class="col-md-5">
-                <img class="img-fluid" width="250" height="250" src="../images/pp1.png" alt="">
+    <div class="row featurette d-flex justify-content-center align-items-center my-4">
+      <div class="col-md-7 order-md-2 textColor bg-dark">
+        <h2 class="featurette-heading" style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 50px; text-align: center; color:aliceblue;">UTKARSH VERMA
+        </h2>
+        <p class="lead"
+          style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">Indian
+          Institute of Information Technology Sricity
+        </p>
+        <p style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">UG2</p>
+        <br> <br>
+      </div>
+      <div class="col-md-3">
+        <img class="img-fluid" width="250" height="250" src="../images/pp2.jpg" alt="">
 
-            </div>
-        </div>
-        <hr>
-
-        <div class="row featurette d-flex justify-content-center align-items-center my-4">
-            <div class="col-md-7 order-md-2 txtColour bg-dark">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">Faded heading.</span>
-                </h2>
-                <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum doloribus facere nulla
-                    perferendis. Maxime sed, deleniti temporibus assumenda beatae, totam magnam unde nulla suscipit
-                    repudiandae ex quisquam dolore corrupti! Molestias, architecto corrupti, temporibus consectetur
-                    delectus voluptates neque cumque provident itaque esse illo laborum ducimus natus hic perspiciatis
-                    distinctio soluta eaque.
-            </div>
-            <div class="col-md-3">
-                <img class="img-fluid" width="250" height="250" src="../images/pp2.jpg" alt="">
-
-            </div>
-        </div>
-        <hr>
-
-        <div class="row featurette d-flex justify-content-center align-items-center my-4">
-            <div class="col-md-7 txtColour bg-dark">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">Faded Heading.</span>
-                </h2>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta numquam architecto,
-                    saepe vitae porro nulla quaerat! Debitis ad nesciunt nobis tempora, rerum sed architecto aspernatur
-                    distinctio qui eligendi earum ratione aut quibusdam possimus modi omnis atque obcaecati eos hic? Nam
-                    odit magni voluptates id molestias. Eligendi possimus maiores vero nostrum?
-                </p>
-            </div>
-            <div class="col-md-5">
-                <img class="img-fluid" width="250" height="250" src="../images/pp3.jpg" alt="">
-
-            </div>
-        </div>
-        <hr>
-
-        <div class="row featurette d-flex justify-content-center align-items-center my-4">
-            <div class="col-md-7 order-md-2 txtColour bg-dark">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">Faded heading.</span>
-                </h2>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. At molestiae quidem mollitia,
-                    voluptate totam distinctio dignissimos, tenetur quos doloribus ipsam perferendis earum! Pariatur
-                    nostrum reprehenderit expedita, corrupti, libero unde nesciunt deleniti non praesentium quis dolorum
-                    voluptas? Velit facere exercitationem repudiandae aut ducimus corrupti perspiciatis maxime iure
-                    dicta, recusandae, cumque praesentium!
-                </p>
-            </div>
-            <div class="col-md-3">
-                <img class="img-fluid" width="250" height="250" src="../images/pp4.jpg" alt="">
-
-            </div>
-        </div>
-        <hr>
-
-        <div class="row featurette d-flex justify-content-center align-items-center my-4">
-            <div class="col-md-7 txtColour bg-dark">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">Faded Heading.</span>
-                </h2>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta numquam architecto,
-                    saepe vitae porro nulla quaerat! Debitis ad nesciunt nobis tempora, rerum sed architecto aspernatur
-                    distinctio qui eligendi earum ratione aut quibusdam possimus modi omnis atque obcaecati eos hic? Nam
-                    odit magni voluptates id molestias. Eligendi possimus maiores vero nostrum?
-                </p>
-            </div>
-            <div class="col-md-5">
-                <img class="img-fluid" width="250" height="250" src="../images/pp5.png" alt="">
-
-            </div>
-        </div>
+      </div>
     </div>
+    <hr>
+
+    <div class="row featurette d-flex justify-content-center align-items-center my-4">
+      <div class="col-md-7 textColor bg-dark">
+        <h2 class="featurette-heading" style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 50px; text-align: center;color: aliceblue;">LAKSHYA BOOB
+        </h2>
+        <p class="lead"
+          style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">Indian
+          Institute of Information Technology Sricity
+        </p>
+        <p style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">UG2</p>
+        <br> <br>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" width="250" height="250" src="../images/pp3.jpg" alt="">
+
+      </div>
+    </div>
+    <hr>
+
+    <div class="row featurette d-flex justify-content-center align-items-center my-4">
+      <div class="col-md-7 order-md-2 textColor bg-dark">
+        <h2 class="featurette-heading" style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 50px; text-align: center;color: aliceblue;">SAKAMURI KODANDA RAMA PHANEENDRA
+        </h2>
+        <p class="lead"
+          style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">Indian
+          Institute of Information Technology Sricity
+        </p>
+        <p style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">UG2</p>
+        <br> <br>
+      </div>
+      <div class="col-md-3">
+        <img class="img-fluid" width="250" height="250" src="../images/pp4.jpg" alt="">
+
+      </div>
+    </div>
+    <hr>
+
+    <div class="row featurette d-flex justify-content-center align-items-center my-4">
+      <div class="col-md-7 textColor bg-dark">
+        <h2 class="featurette-heading" style="font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 50px; text-align: center;color:  white;">ZAMPANI RAM GOPAL
+        </h2>
+        <p class="lead"
+          style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">Indian
+          Institute of Information Technology Sricity
+        </p>
+        <p style="font-family: 'Poppins', sans-serif; font-weight: 700; color: #96968d; text-align: center;">UG2</p>
+        <br> <br>
+      </div>
+      <div class="col-md-5">
+        <img class="img-fluid" width="250" height="250" src="../images/pp5.png" alt="">
+
+      </div>
+    </div>
+  </div>
 
       <!-- Footer -->
       <%- include('./partials/footer'); %>
