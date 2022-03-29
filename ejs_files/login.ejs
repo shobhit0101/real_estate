@@ -98,73 +98,61 @@
 
 
   <!-- login page -->
-  <div class="loginbox">
+  <div class="logincontainer">
     <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="#" class="sign-in-form">
-            <h2 class="title">Sign in</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" class="btn Solid loginbtn" />
-          </form>
-          <form action="#" class="sign-up-form">
-            <h2 class="title">Sign up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" class="btn loginbtn" value="Sign up" />
-          </form>
-        </div>
-      </div>
-
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>New here ?</h3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
-              ex ratione. Aliquid!
-            </p>
-            <button class="btn transparent loginbtn" id="sign-up-btn">
-              Sign up
-            </button>
+      <form class="form" id="login">
+          <h1 class="form__title">Login</h1>
+          <div class="form_message form_message--error"></div>
+          <div class="form__input-group">
+              <input type="text" class="form__input" autofocus placeholder="Username or email">
+              <div class="form__input-error-message"></div>
           </div>
-          <img src="/images/log.svg" class="image" alt="" />
-        </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>One of us ?</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              laboriosam ad deleniti.
-            </p>
-            <button class="btn transparent loginbtn" id="sign-in-btn">
-              Sign in
-            </button>
+          <div class="form__input-group">
+              <input type="password" class="form__input" autofocus placeholder="Password">
+              <div class="form__input-error-message"></div>
           </div>
-          <img src="/images/register.svg" class="image" alt="" />
-        </div>
-      </div>
-    </div>
-
+          <button class="form__button" type="submit">Continue</button>
+          <p class="form__text">
+              <a href="#" class="form__link">Forgot your password?</a>
+          </p>
+          <p class="form__text">
+              <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+          </p>
+      </form>
+      <form class="form form--hidden" id="createAccount">
+          <h1 class="form__title">Create Account</h1>
+          <div class="form_message form_message--error"></div>
+          <div class="form__input-group">
+              <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username" required>
+              <div class="form__input-error-message"></div>
+          </div>
+          <div class="form__input-group">
+              <input type="text" class="form__input" autofocus placeholder="Email Address" id="email" required>
+              <div class="form__input-error-message"></div>
+          </div>
+          <div class="form__input-group">
+              <input type="text" class="form__input" autofocus placeholder="Mobile No." id="mob" required>
+              <div class="form__input-error-message"></div>
+          </div>
+          <div class="form__input-group">
+              <input type="password" class="form__input" autofocus placeholder="Password" id="pass" required>
+              <div class="form__input-error-message"></div>
+          </div>
+          <div class="form__input-group">
+              <input type="password" class="form__input" autofocus placeholder="Confirm password" id="pass2" required>
+              <div class="form__input-error-message"></div>
+          </div>
+          
+          <button class="form__button" type="submit">Continue</button>
+          <p class="form__text">
+              <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+          </p>
+      </form>
+  </div>
   </div>
 
+
+  
 
   <script src="js/LogIn_SignUp.js"></script>
 </body>

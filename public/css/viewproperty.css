@@ -1,0 +1,104 @@
+.container .container .row .col-3 .row-4,.col-7 .row-4{
+    font-size: 40px;
+}
+.container .cont{
+    margin:10px;
+    padding-left: 9px;
+    margin-top: 10px;
+}
+.container .cont .col-3{
+
+    padding-top: 9.5px;
+}
+.container .cont .col-1{
+    padding-top: 8px;
+}
+ .carousel{
+    border-radius: 50px;
+    margin-right: 30px;
+    
+} 
+.carousel-cell {
+    width: 100%;
+    
+    margin: 10px;
+    
+    border-radius: 10px;
+   
+}
+ .img {
+    height:400px;
+    max-width: 100%;
+}
+.container .carousel .carousel-cell .img img{
+    height:400px;
+    max-width: 100%;
+}
+/*form*/
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
+
+
+
+html, body {
+  background: #f1f1f1;
+  font-family: 'Merriweather', sans-serif;
+  padding: 1em;
+}
+
+h4 {
+   text-align: center;
+   color: #a8a8a8;
+   padding-bottom: 3px;
+   @include text-shadow(1px 1px 0 rgba(white, 1));
+}
+   
+ 
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+.feedback-input:focus { border:2px solid #CC4949; }
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#CC6666;
+  border-radius:5px;
+  border:0;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#CC4949; }
