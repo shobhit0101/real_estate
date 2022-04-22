@@ -334,6 +334,10 @@ app.get('/postyourproperty', (req,res) => {
    res.render('viewproperty',{title : 'View Property'});
 });
 
+app.get('/availableproperty', (req,res) => {
+   res.render('availableproperty',{title : 'Available Property'});
+});
+
  app.use((req ,res) => {
     res.status(404).render('404',{title : '404'});
    });
