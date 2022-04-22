@@ -90,175 +90,175 @@
 
 
   <!-- form starts here-->
+  <form action="/post" method="post" enctype="multipart/form-data">
+    <div class="container form-container">
+      <h3 style="text-align: center;">Begin Posting your Property</h3>
+      <h4>1. Basic Details</h4>
+      <!-- <h6>Purpose   (you're looking to...)</h6> -->
+      <div class="form-section-container">
+        <label for="Purpose" class="form-label"> <strong>Purpose (you're looking to...) </strong> </label>
+        <div class="form-check">
+          <input class="form-check-input" value="Sell"  type="radio" name="purpose" id="" checked >
+          <label class="form-check-label" for="">
+            Sell
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" value="Rent" type="radio" name="purpose" id="">
+          <label class="form-check-label" for="">
+            Rent
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" value="PG" type="radio" name="purpose" id="">
+          <label class="form-check-label" for="">
+            PG
+          </label>
+        </div>
+      </div>
 
-  <div class="container form-container">
-    <h3 style="text-align: center;">Begin Posting your Property</h3>
-    <h4>1. Basic Details</h4>
-    <!-- <h6>Purpose   (you're looking to...)</h6> -->
-    <div class="form-section-container">
-      <label for="Purpose" class="form-label"> <strong>Purpose (you're looking to...) </strong> </label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="" checked>
-        <label class="form-check-label" for="">
-          Sell
-        </label>
+      <div class="form-section-container">
+        <label for="PropertyCategory" class="form-label"> <strong>Property's Category</strong> </label>
+        <div class="form-check">
+          <input class="form-check-input" value="Residential" type="radio" name="prop_cat" id="" checked>
+          <label class="form-check-label" for="">
+            Residential
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" value="Commercial" type="radio" name="prop_cat" id="">
+          <label class="form-check-label" for="">
+            Commercial
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" value="Apartment" type="radio" name="prop_cat" id="">
+          <label class="form-check-label" for="">
+            Apartment
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" value="House" type="radio" name="prop_cat" id="">
+          <label class="form-check-label" for="">
+            House
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" value="Land" type="radio" name="prop_cat" id="">
+          <label class="form-check-label" for="">
+            Land
+          </label>
+        </div>
+
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="">
-        <label class="form-check-label" for="">
-          Rent
-        </label>
+      <h4>2. Location Details</h4>
+      <div class="form-section-container">
+
+        <input type="text" class="form-control textbox" name="city" id="city" placeholder="City*" required><br>
+
+        <input type="text" class="form-control textbox" name="Apartment_society" id="Apartment\society"
+          placeholder="Apartment\society*" required><br>
+
+        <input type="text" class="form-control textbox" name="Locality" id="Locality" placeholder="Locality*"
+          required><br>
+
+        <input type="text" class="form-control textbox" name="sublocality" id="sublocality"
+          placeholder="Sub locality(Optional)"><br>
+
+        <input type="text" class="form-control textbox" name="houseno" id="houseno" placeholder="House no.(Optional)">
+
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="">
-        <label class="form-check-label" for="">
-          PG
-        </label>
+      <h4>3. Tell Us About Your Property</h4>
+      <div class="form-section-container">
+
+        <h5>Add room details</h5>
+        <label for="bedrooms">No.of bedrooms</label><br>
+        <select name="bedrooms" id="bedrooms" class="form-select selectbox">
+          <option value="0">none</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          
+
+
+        </select>
+        <br>
+        <label for="bedrooms">No.of Bathrooms</label><br>
+
+        <select name="Bathrooms" id="Bathrooms" class="form-select selectbox">
+          <option value="0">none</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          
+
+
+
+        </select>
+        <br>
+        <label for="bedrooms">No.of Balconies</label><br>
+
+        <select name="Balconies" id="Balconies" class="form-select selectbox">
+          <option value="0">none</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          
+
+
+        </select>
       </div>
+
+      <div class="form-section-container">
+
+        <h5>Add Area details</h5>
+
+        <input type="text" name="area" id="Carpet_Area" placeholder="Carpet Area">
+        <label for="Carpet_Area"></label>
+        <select name="Area_Unit" id="Area_Unit" size="1">
+          <option value="sq.ft">sq.ft</option>
+          <option value="sq.yards">sq.yards</option>
+          <option value="sq.m">sq.m</option>
+          <option value="acres">acres</option>
+          <option value="sq.km">sq.km</option>
+          <option value="sq.hm">sq.hm</option>
+          <option value="sq.cm">sq.cm</option>
+        </select>
+
+        <h5 style="margin:10px auto">Availability Status</h5>
+        <input type="button" value="Ready to move" class="btn btn-primary">
+        <input type="button" value="Under Construction" class="btn btn-primary">
+      </div>
+
+      <h4>4. Upload Photos</h4>
+      <div class="form-section-container">
+        <img src="images/collections_black_24dp.svg" alt="not found" style="height: 4rem;">
+        <br>
+        <label for="image">Select a file:</label><br>
+        <input type="file" name="image" id="image">
+
+      </div>
+
+      <h4>5. Pricing and ownership</h4>
+      <div class="form-section-container">
+        <input type="text" class="form-control textbox" name="price" id="" placeholder="₹ Expected Price">
+        <br>
+        <input type="text" class="form-control textbox" name="phoneno" id="" placeholder="Phone Number">
+      </div>
+
+      <input type="submit" class="btn btn-success">
+
+      
+
+
     </div>
-
-    <div class="form-section-container">
-      <label for="PropertyCategory" class="form-label"> <strong>Property's Category</strong> </label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="" checked>
-        <label class="form-check-label" for="">
-          Residential
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="">
-        <label class="form-check-label" for="">
-          Commercial
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="">
-        <label class="form-check-label" for="">
-          Apartment
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="">
-        <label class="form-check-label" for="">
-          House
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="" id="">
-        <label class="form-check-label" for="">
-          Land
-        </label>
-      </div>
-
-    </div>
-    <h4>2. Location Details</h4>
-    <div class="form-section-container">
-
-      <input type="text" class="form-control textbox" name="city" id="city" placeholder="City*" required><br>
-
-      <input type="text" class="form-control textbox" name="Apartment_society" id="Apartment\society"
-        placeholder="Apartment\society*" required><br>
-
-      <input type="text" class="form-control textbox" name="Locality" id="Locality" placeholder="Locality*"
-        required><br>
-
-      <input type="text" class="form-control textbox" name="sublocality" id="sublocality"
-        placeholder="Sub locality(Optional)"><br>
-
-      <input type="text" class="form-control textbox" name="houseno" id="houseno" placeholder="House no.(Optional)">
-
-    </div>
-    <h4>3. Tell Us About Your Property</h4>
-    <div class="form-section-container">
-
-      <h5>Add room details</h5>
-      <label for="bedrooms">No.of bedrooms</label><br>
-      <select name="bedrooms" id="bedrooms" class="form-select selectbox">
-        <option value="none">none</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="more_than_5">More than 5</option>
-
-
-      </select>
-      <br>
-      <label for="bedrooms">No.of Bathrooms</label><br>
-
-      <select name="Bathrooms" id="Bathrooms" class="form-select selectbox">
-        <option value="none">none</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="more_than_5">More than 5</option>
-
-
-
-      </select>
-      <br>
-      <label for="bedrooms">No.of Balconies</label><br>
-
-      <select name="Balconies" id="Balconies" class="form-select selectbox">
-        <option value="none">none</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="more_than_5">More than 5</option>
-
-
-      </select>
-    </div>
-
-    <div class="form-section-container">
-
-      <h5>Add Area details</h5>
-
-      <input type="text" id="Carpet_Area" placeholder="Carpet Area">
-      <label for="Carpet_Area"></label>
-      <select name="Area_Unit" id="Area_Unit" size="1">
-        <option value="sq.ft">sq.ft</option>
-        <option value="sq.yards">sq.yards</option>
-        <option value="sq.m">sq.m</option>
-        <option value="acres">acres</option>
-        <option value="sq.km">sq.km</option>
-        <option value="sq.hm">sq.hm</option>
-        <option value="sq.cm">sq.cm</option>
-      </select>
-
-      <h5 style="margin:10px auto">Availability Status</h5>
-      <input type="button" value="Ready to move" class="btn btn-primary">
-      <input type="button" value="Under Construction" class="btn btn-primary">
-    </div>
-
-    <h4>4. Upload Photos</h4>
-    <div class="form-section-container">
-      <img src="images/collections_black_24dp.svg" alt="not found" style="height: 4rem;">
-      <br>
-      <label for="myflie">Select a file:</label><br>
-      <input type="file" name="myfile" id="myfile">
-
-    </div>
-
-    <h4>5. Pricing and ownership</h4>
-    <div class="form-section-container">
-      <input type="text" class="form-control textbox" name="" id="" placeholder="₹ Expected Price">
-      <br>
-      <input type="text" class="form-control textbox" name="" id="" placeholder="Phone Number">
-    </div>
-
-    <input type="submit" class="btn btn-success">
-
-    
-
-
-  </div>
-
+  </form>
   <!-- form ends here -->
 
 

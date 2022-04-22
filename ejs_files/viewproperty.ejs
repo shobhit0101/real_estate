@@ -50,7 +50,7 @@
                             <div class="col-5">
                                 <div class="carousel"
                                     data-flickity='{ "autoPlay": true }'>
-                                    <div class="carousel-cell"><div class="img"><img src="images\francesca-tosolini-tHkJAMcO3QE-unsplash.jpg" ></div></div>
+                                    <div class="carousel-cell"><div class="img"><img src="data:data/<%=data.img.contentType%>;base64,<%=data.img.data.toString('base64')%>"></div></div>
                                     <div class="carousel-cell"><div class="img"><img src="images\properyy_img1.jpg" ></div></div>
                                     <div class="carousel-cell"><div class="img"><img src="images\greg-rivers-4vjZfcA4OSY-unsplash.jpg" ></div></div>
                                     <div class="carousel-cell"><div class="img"><img src="images\property_img2.jpg" ></div></div>
@@ -206,7 +206,7 @@
                                 </div>
                             </div>
                             <div class="col ms-4 pt-2">
-                                <form>
+                                <form method="post" action="/mail">
                                     <h4>Send Enquiry to Owner</h4>      
                                     <input name="name" type="text" class="feedback-input" placeholder="Name" />   
                                     <input name="email" type="text" class="feedback-input" placeholder="Email" />
@@ -222,6 +222,7 @@
             </div>
 
         </div>
+        
         <!-- <div class="cont">
             <div class="container">
                 <div class="row">

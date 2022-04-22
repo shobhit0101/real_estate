@@ -45,13 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
       createAccountForm.classList.add("form--hidden");
   });
 
-  loginForm.addEventListener("submit", e => {
-      e.preventDefault();
+//   loginForm.addEventListener("submit", e => {
+//       e.preventDefault();
 
-      // Perform your AJAX/Fetch login
+//       // Perform your AJAX/Fetch login
 
-      setFormMessage(loginForm, "error", "Invalid username/password combination");
-  });
+//       setFormMessage(loginForm, "error", "Invalid username/password combination");
+//   });
 
   document.querySelectorAll(".form__input").forEach(inputElement => {
       inputElement.addEventListener("blur", e => {
@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
               a=e.target.value;
               setInputError(inputElement, "password must be at least 8 characters in length");
            }
-           if (e.target.id === "pass2" && e.target.value!=a) {
-              setInputError(inputElement, "passwords don't match");
-           }
+        //    if (e.target.id === "pass2" && e.target.value!=a) {
+        //       setInputError(inputElement, "passwords don't match");
+        //    }
            let phoneno = /^\d{10}$/;
            if (e.target.id === "mob" && !e.target.value.match(phoneno)) {
               setInputError(inputElement, "invalid mobile no.");
