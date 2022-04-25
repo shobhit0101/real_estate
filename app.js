@@ -45,18 +45,9 @@ const storage = multer.diskStorage({
  
 var upload = multer({ storage: storage });
 
-//
 
-//try
-app.get('/admin',(req,res)=>{
-   const a=db.collection('user').find(function(err,result){
-      if(err){
-         throw err;
-      }
-      res.send(result);
-   })
-   
-})
+
+
 
 
 
@@ -319,9 +310,34 @@ app.get("/a",(req,res)=>{
 })
 //updation
 app.post('/update',(req,res)=>{
-   
+   let query={email:eemail};
+   let o;
+   db.collection('users').find(query).toArray(function(err,result){
+                  
+        o= 1;
+         
+      
+   })
+   let i=req.query.obj;
+   let myquery = { i: "Valley 345" };
+   let newv = { $set: { i: "Canyon 123" } };
+   db.collection("customers").updateOne(myquery, newv, function(err, res) {
+      
+   });
 })
+//admin
+app.get("/admin",(req,res)=>{
+   db.collection('user_5').find({}).toArray(function(err,data){
+   res.render('admin',{data:data ,title:'Admin' ,page_name:'admin_users'} );
+   });
+});
 
+app.get("/admin_property",(req,res)=>{
+   db.collection('property_model2').find({}).toArray(function(err,data){
+   res.render('admin_property',{data:data ,title:'Admin' ,page_name:'admin_property'} );
+   });
+});
+//
 //routes
 
 app.get('/', (req,res) => {
@@ -380,6 +396,13 @@ app.get('/template',(req,res)=>{
       
    res.render('template');
 })
+app.get('/admin', (req,res) => {
+   res.render('admin',{title : 'Admin',page_name: 'admin_users'});
+});
+
+app.get('/admin_property', (req,res) => {
+   res.render('admin_property',{title : 'Admin',page_name : 'admin_property'});
+});
 
  app.use((req ,res) => {
     res.status(404).render('404',{title : '404'});

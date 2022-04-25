@@ -1,0 +1,33 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark topnav">
+    <div class="container-fluid">
+        <img src="images\outline_balcony_white_24dp.png" alt="balcony" class="balcony">
+        <a class="navbar-brand navbrand" href="#">Perfect View</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li  <% if (page_name === 'admin_users') { %>
+                    class="nav-item active text-center"
+                    <%} else { %>
+                    class="nav-item text-center"
+                    <% } %> >
+                    <a class="nav-link" href="admin">Users</a>
+                </li>
+                <li <% if (page_name === 'admin_property') { %>
+                    class="nav-item active text-center"
+                    <%} else { %>
+                    class="nav-item text-center"
+                    <% } %> >
+                    <a class="nav-link" href="admin_property">Property</a>
+                </li>
+                
+                <li class="nav-item  text-center">
+                    <a class="nav-link" href="login"><i class="fa fa-user-circle" style="font-size: 15px;" aria-hidden="true"></i> Account</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
