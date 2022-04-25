@@ -71,7 +71,7 @@ app.get('/admi',( req, res)=>{
 
 
 //login
-let state=0;
+let state=0;let objlogin;
 let namee;let eemail;
 app.post("/login",(req,res)=>{
    let name=req.body.name;
@@ -310,21 +310,29 @@ app.get("/a",(req,res)=>{
 })
 //updation
 app.post('/update',(req,res)=>{
-   let query={email:eemail};
-   let o;
-   db.collection('users').find(query).toArray(function(err,result){
-                  
-        o= 1;
-         
-      
-   })
    let i=req.query.obj;
-   let myquery = { i: "Valley 345" };
+   let myquery = { email: eemail };
    let newv = { $set: { i: "Canyon 123" } };
-   db.collection("customers").updateOne(myquery, newv, function(err, res) {
+   db.collection("customers").updateOne(myquery, newv, function(err, resp) {
+      if(err) throw err;
+      console.log(resp);
+   });
+   
+})
+//
+//deletion
+app.get('/del',(req,res)=>{
+   
+   
+   var myquery = { username: req.query.name,email:req.query.email };
+   db.collection("user_5").deleteMany(myquery, function(err, obj) {
+      if (err) throw err;
+      
       
    });
+   res.redirect("/admin");
 })
+//
 //admin
 app.get("/admin",(req,res)=>{
    db.collection('user_5').find({}).toArray(function(err,data){
@@ -403,7 +411,9 @@ app.get('/admin', (req,res) => {
 app.get('/admin_property', (req,res) => {
    res.render('admin_property',{title : 'Admin',page_name : 'admin_property'});
 });
-
+app.get('/editprofile', (req,res) => {
+   res.render('editprofile',{title : 'Edit Profile'});
+});
  app.use((req ,res) => {
     res.status(404).render('404',{title : '404'});
    });
