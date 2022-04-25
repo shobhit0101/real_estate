@@ -201,7 +201,7 @@ app.post("/mail",(req,res)=>{
       service: 'gmail',
       auth: {
         user: 'groupfsd20@gmail.com',
-        pass: 'Grp201234#'
+        pass: 'Grp1234#'
       }
    });
    var mailOptions = {
@@ -256,7 +256,6 @@ app.post("/post",upload.single('image'),(req,res)=>{
           throw err;
       }
       console.log("Record Inserted Successfully");
-      
    });
       //join databases
    db.collection('users').aggregate([
@@ -270,18 +269,38 @@ app.post("/post",upload.single('image'),(req,res)=>{
       }
    ]).toArray((err,re)=>{
       if (err) throw err;
-      console.log(re.email);
-      console.log((re[19].postedproperty[0]));
+      console.log(re);
+      
       // re.redirect("/a");
    })
-    res.redirect("/a");
+   res.render('viewproperty',{data:datas,title:'viewproperty'});
    
 
           
       
   });
-
-
+//search
+app.post("/search",(req,res)=>{
+   let city=req.body.search;
+   let query={city:city};
+   db.collection('property_model2').find(query).toArray(function(err,result){
+      
+      res.render('template',{title : city,data:result});
+   });
+}) 
+ //to get to view property
+app.get("/v",(req,res)=>{
+   let city=req.query.a;
+   let query={city:city};
+   db.collection('property_model2').find(query).toArray(function(err,result){
+      
+      res.render('viewproperty',{data:result[req.query.obj],title:'viewproperty'});
+   });
+    
+   
+   
+})
+//
 
 //
 app.get("/a",(req,res)=>{
@@ -297,6 +316,10 @@ app.get("/a",(req,res)=>{
       console.log(data[10].city);
       res.render('viewproperty',{data:data[14],title:'viewproperty'});
    });
+})
+//updation
+app.post('/update',(req,res)=>{
+   
 })
 
 //routes
@@ -330,6 +353,22 @@ app.get('/postyourproperty', (req,res) => {
       res.render('login',{title : 'Login'});
  });
 
+//posted property 
+app.get('/p',(req,res)=>{
+   if(state==1){
+      let query={email:eemail};
+      db.collection('property_model2').find(query).toArray(function(err,result){
+                  
+         
+         
+         res.render('template',{title : namee,data:result});
+      })
+   }
+   else{
+      res.render('login',{title : 'Login'});
+   }
+})
+//
  app.get('/viewproperty', (req,res) => {
    res.render('viewproperty',{title : 'View Property'});
 });
@@ -337,6 +376,10 @@ app.get('/postyourproperty', (req,res) => {
 app.get('/availableproperty', (req,res) => {
    res.render('availableproperty',{title : 'Available Property'});
 });
+app.get('/template',(req,res)=>{
+      
+   res.render('template');
+})
 
  app.use((req ,res) => {
     res.status(404).render('404',{title : '404'});
