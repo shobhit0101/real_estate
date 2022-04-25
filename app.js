@@ -87,11 +87,19 @@ app.post("/login",(req,res)=>{
       }
       else{
          // alert("Incorrect credentials");
+         objlogin=result[0];
          eemail=result[0].email;
+         let query={email:eemail};
+         db.collection('property_model2').find(query).toArray(function(err,result){
+                     
+            
+            
+            res.render('template',{title : namee,data:result});
+         })
          state=1;
          namee=result[0].username;
          console.log(name);
-         return res.render('welcomepage',{name : name});
+         return res.render('welcomepage',{name : name,data:objlogin});
          
 
       }
