@@ -18,18 +18,21 @@
     </div>
     <div class="user_table_container_header">
         <div class="row">
-          <div class="col-3">
+          <div class="col-2">
             <b class="p_class" >id</b>
           </div>
-          <div class="col-3">
+          <div class="col-2">
             <b class="p_class" >Username</b>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <b class="p_class" >Email</b>
             </div>
-            <div class="col-3">
+            <div class="col-2">
                 <b class="p_class" >phone</b>
                 </div>
+          <div class="col-2">
+            <b class="p_class" >delete</b>
+            </div>
     </div>
     </div>
     <% if(data.length>0) { %>
@@ -37,18 +40,21 @@
         <%data.forEach(user=>{%>  
         <div class="row user_table_row">
             
-          <div class="col-3 user_table_col">
+          <div class="col-2">
             <p class="p_class" ><%= user._id %></p>
           </div>
-          <div class="col-3 user_table_col">
+          <div class="col-2">
             <p class="p_class" ><%= user.username%></p>
           </div>
-          <div class="col-3 user_table_col">
+          <div class="col-4">
             <p class="p_class" ><%= user.email %></p>
             </div>
-            <div class="col-3 user_table_col">
+            <div class="col-2">
                 <p class="p_class" ><%= user.phoneno%></p>
                 </div>
+                <div class="col-2">
+                    <p class="p_class" ><a href="/del?name=<%=user.username%>&email=<%=user.email%>">delete</a></p>
+                    </div>
             </div>   
           <% }) %>
    
@@ -67,6 +73,9 @@
                 <div class="col">
                  <b class="p_class" >empty</b>
              </div>
+             <div class="col">
+                <b class="p_class" >empty</b>
+            </div>
         </div>
         </div>
         
