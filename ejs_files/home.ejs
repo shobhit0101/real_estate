@@ -48,7 +48,7 @@
             <button type="button" class="btn btn-primary categories">PG</button>
             <button type="button" class="btn btn-primary categories">Commercial</button>
           </div>
-          <form class="d-flex submit">
+          <form class="d-flex submit" action="/search" method="post">
             <div class="dropdown dropstart">
               <a class="btn dropdown-toggle location" href="#" role="button" id="dropdownMenuLink"
                 data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,7 +68,7 @@
                 <li><a class="dropdown-item" href="#">Kanpur</a></li>
               </ul>
             </div>
-            <input class="form-control me-2 search-text" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2 search-text" type="search" placeholder="Search" aria-label="Search" name="search">
             <button class="btn search" type="submit">Search</button>
           </form>
         </div>

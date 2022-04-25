@@ -73,7 +73,7 @@
                                                     <b>Area</b>
                                                 </div>
                                                 <div class="row">
-                                                        5000 sq.ft.
+                                                        <%=data.area_of_property%> <%=data.area_unit%> 
                                                 </div>
                                             </div>
                                         </div>
@@ -89,7 +89,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-11">
-                                                        2 bedroom, 2 bathroom, 3balcony
+                                                        <%=data.no_of_bedrooms%> bedroom, <%=data.no_of_bathrooms%> bathroom, <%=data.no_of_floors%> balcony
                                                     </div>
                                                 </div>
                                                 
@@ -106,7 +106,7 @@
                                                     <b>Price</b>
                                                 </div>
                                                 <div class="row">
-                                                    50 lac
+                                                    <%=data.property_price%> 
                                                 </div>
                                                 
                                             </div>
@@ -123,10 +123,13 @@
                                                     <b>Address</b>
                                                 </div>
                                                 <div class="row">
-                                                    jnl
+                                                    <%=data.houseno%> <%=data.apart%> 
                                                 </div>
                                                 <div class="row">
-                                                    Mumbai,South
+                                                    <%=data.subloc%>
+                                                </div>
+                                                <div class="row">
+                                                    <%=data.locality%>, <%=data.city%>
                                                 </div>
                                             </div>
                                         </div>
