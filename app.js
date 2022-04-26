@@ -90,16 +90,17 @@ app.post("/login",(req,res)=>{
          objlogin=result[0];
          eemail=result[0].email;
          let query={email:eemail};
+         
+         state=1;
+         namee=result[0].username;
+         console.log(name);
          db.collection('property_model2').find(query).toArray(function(err,result){
                      
             
             
-            res.render('template',{title : namee,data:result});
+            return res.render('welcomepage',{name : name,data:objlogin,dataprop:result});
          })
-         state=1;
-         namee=result[0].username;
-         console.log(name);
-         return res.render('welcomepage',{name : name,data:objlogin});
+         
          
 
       }
@@ -422,6 +423,14 @@ app.get('/admin_property', (req,res) => {
 app.get('/editprofile', (req,res) => {
    res.render('editprofile',{title : 'Edit Profile'});
 });
+//admin login
+app.get("/admin_login",(req,res)=>{
+   res.render('admin_login',{title : 'Admin Login'});
+})
+app.post("/adminl",(req,res)=>{
+   res.redirect("/admin");
+});
+//
  app.use((req ,res) => {
     res.status(404).render('404',{title : '404'});
    });

@@ -28,10 +28,6 @@
 
   <title>Perfect View | <%=title %>
   </title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
   <title>Perfect View</title>
 </head>
 
@@ -104,61 +100,24 @@
   <!-- login page -->
   <div class="logincontainer">
     <div class="container">
-      <form action="/login" class="form" id="login" method="POST">
-          <h1 class="form__title">Login</h1>
+      <form action="/adminl" class="form" id="login" method="POST">
+          <h1 class="form__title">ADMIN LOGIN</h1>
           <div class="form_message form_message--error"></div>
           <div class="form__input-group">
-              <input type="text" class="form__input" autofocus placeholder="Username or email" id="name" name="name">
-              <div class="form__input-error-message"></div>
-          </div>
-          <div class="form__input-group">
-              <input type="password" class="form__input" autofocus placeholder="Password" name="passs" id="passs">
-              <div class="form__input-error-message"></div>
-          </div>
-          <button class="form__button" type="submit">Continue</button>
-          <p class="form__text">
-              <a href="/admin_login" class="form__link">Admin Login</a>
-          </p>
-          <p class="form__text">
-              <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
-          </p>
-      </form>
-      <form action='/sign_up' class="form form--hidden" id="createAccount" method="POST">
-          <h1 class="form__title">Create Account</h1>
-          <div class="form_message form_message--error"></div>
-          <div class="form__input-group">
-              <input type="text" id="signupUsername" name="signupUsername" class="form__input" autofocus placeholder="Username" required>
-              <div class="form__input-error-message"></div>
-          </div>
-          <div class="form__input-group">
-              <input type="text" class="form__input" autofocus placeholder="Email Address" id="email" name="email" required>
-              <div class="form__input-error-message"></div>
-          </div>
-          <div class="form__input-group">
-              <input type="text" class="form__input" autofocus placeholder="Mobile No." id="mob" required>
-              <div class="form__input-error-message"></div>
-          </div>
-          <div class="form__input-group">
-              <input type="password" class="form__input" autofocus placeholder="Password" id="pass" name="pass" required>
-              <div class="form__input-error-message"></div>
-          </div>
-          <div class="form__input-group">
-              <input type="password" class="form__input" autofocus placeholder="Confirm password" id="pass2" required>
+              <input type="text" class="form__input" autofocus placeholder="admin code" id="name" name="pass">
               <div class="form__input-error-message"></div>
           </div>
           
           <button class="form__button" type="submit">Continue</button>
           <p class="form__text">
-              <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+              <a href="#" class="form__link">Forgot your password?</a>
           </p>
+          
       </form>
-  </div>
-  </div>
+
 
 
   
 
-  <script src="js/LogIn_SignUp.js"></script>
+  <!-- <script src="js/LogIn_SignUp.js"></script> -->
 </body>
-
-</html>
