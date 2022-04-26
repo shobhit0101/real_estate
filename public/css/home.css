@@ -161,6 +161,8 @@
 
 
 
+
+
 /* PostYourProperty Content Starts here  */
 .postyourpropertycontainer {
     width: 100vw;
@@ -496,6 +498,11 @@
       filter: blur(4px);
       transition: 0.1s ease;
 }
+
+
+/* admin portal css */
+
+
 .admin_portal_container{
     background-color: #82e05d;
     color: #000000;

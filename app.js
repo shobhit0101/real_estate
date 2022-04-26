@@ -149,7 +149,7 @@ app.post("/sign_up",(req,res)=>{
       service: 'gmail',
       auth: {
         user: 'groupfsd20@gmail.com',
-        pass: 'Grp201234#'
+        pass: 'Grp1234#'
       }
    });
    var mailOptions = {
@@ -358,18 +358,18 @@ app.get("/admin_property",(req,res)=>{
 //routes
 
 app.get('/', (req,res) => {
-   res.render('home',{title : 'Home'});
+   res.render('home',{title : 'Home',page_name : 'home'});
 });
 
 app.get('/home', (req,res) => {
-   res.render('home',{title : 'Home',active :'home'});
+   res.render('home',{title : 'Home',page_name : 'home'});
 });
 
 app.get('/postyourproperty', (req,res) => {
    if(state==1)
-      res.render('postyourproperty',{title : 'Post Your Property'});
+      res.render('postyourproperty',{title : 'Post Your Property',page_name : 'postyourproperty'});
    else
-      res.render('login',{title : 'Login'});
+      res.render('login',{title : 'Login',page_name : 'login'});
  });
 
  app.get('/aboutUs', (req,res) => {
@@ -388,7 +388,7 @@ app.get('/postyourproperty', (req,res) => {
       })
     }
     else
-      res.render('login',{title : 'Login'});
+      res.render('login',{title : 'Login',page_name : 'login'});
  });
 
 //posted property 
@@ -403,7 +403,7 @@ app.get('/p',(req,res)=>{
       })
    }
    else{
-      res.render('login',{title : 'Login'});
+      res.render('login',{title : 'Login',page_name : 'login'});
    }
 })
 //
