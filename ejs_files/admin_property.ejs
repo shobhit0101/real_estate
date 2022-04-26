@@ -22,7 +22,7 @@
       <div class="col-2">
         <b class="p_class" >id</b>
       </div>
-      <div class="col-2">
+      <div class="col-4">
         <b class="p_class" >email</b>
       </div>
       <div class="col-2">
@@ -31,11 +31,11 @@
       <div class="col-2">
         <b class="p_class" >price</b>
       </div>
-      <div class="col-2">
+      <div class="col-1">
         <b class="p_class" >area</b>
       </div>
-      <div class="col-2">
-        <b class="p_class" >Delete</b>
+      <div class="col-1">
+        <b class="p_class" >City</b>
       </div>
 </div>
 </div>
@@ -47,7 +47,7 @@
       <div class="col-2">
         <p class="p_class" ><%= property._id %></p>
       </div>
-      <div class="col-2">
+      <div class="col-4">
         <p class="p_class" ><%= property.email%></p>
       </div>
         <div class="col-2">
@@ -56,11 +56,11 @@
         <div class="col-2">
         <p class="p_class" ><%= property.price%></p>
         </div>
-        <div class="col-2">
+        <div class="col-1">
         <p class="p_class" ><%= property.area%></p>
         </div>
-        <div class="col-2">
-        <p class="p_class" >Delete</p>
+        <div class="col-1">
+        <p class="p_class" ><%= property.city%></p>
         </div>
     </div>   
       <% }) %>
@@ -80,6 +80,12 @@
             <div class="col">
              <b class="p_class" >empty</b>
          </div>
+         <div class="col">
+          <b class="p_class" >empty</b>
+          </div>
+          <div class="col">
+           <b class="p_class" >empty</b>
+       </div>
     </div>
     </div>
     

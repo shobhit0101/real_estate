@@ -282,15 +282,16 @@ app.post("/post",upload.single('image'),(req,res)=>{
       
   });
 //search
+let searchobj;
 app.post("/search",(req,res)=>{
    let city=req.body.search;
    let query={city:city};
    db.collection('property_model2').find(query).toArray(function(err,result){
-      
+      searchobj=result;
       res.render('template',{title : city,data:result,page_name:'home'});
    });
 }) 
- //to get to view property
+      //to get to view property
 let propobj;
 app.get("/v",(req,res)=>{
    let city=req.query.a;
@@ -359,24 +360,43 @@ app.get('/del',(req,res)=>{
    res.redirect("/admin");
 })
 //
+//
 //admin
 app.get("/admin",(req,res)=>{
    db.collection('user_5').find({}).toArray(function(err,data){
-   res.render('admin',{data:data ,title:'Admin' ,page_name:'admin_users'} );
+   res.render('admin',{data:data ,title:'Admin | User' ,page_name:'admin_users'} );
    });
 });
 
 app.get("/admin_property",(req,res)=>{
    db.collection('property_model2').find({}).toArray(function(err,data){
-   res.render('admin_property',{data:data ,title:'Admin' ,page_name:'admin_property'} );
+   res.render('admin_property',{data:data ,title:'Admin | property' ,page_name:'admin_property'} );
+   });
+});
+app.get("/admin_contactus",(req,res)=>{
+   db.collection('contact').find({}).toArray(function(err,data){
+   res.render('admin_contactus',{data:data ,title:'Admin | Contact Us' ,page_name:'admin_contactus'} );
    });
 });
 //
 //sorting
 app.get("/sort_price_a",(req,res)=>{
-   let data=req.query.ids;
-
-   console.log(data[0]);
+   let query={city:req.query.city};
+   
+   let sort={property_price:-1};
+   db.collection("property_model2").find(query).sort(sort).toArray((err,resp)=>{
+      if(err) throw err;
+      res.render('template',{title : req.query.city,data:resp,page_name:'home'});
+   })
+}) 
+app.get("/sort_price_d",(req,res)=>{
+   let query={city:req.query.city};
+   
+   let sort={property_price:1};
+   db.collection("property_model2").find(query).sort(sort).toArray((err,resp)=>{
+      if(err) throw err;
+      res.render('template',{title : req.query.city,data:resp,page_name:'home'});
+   })
 }) 
 // 
 //Contact US
@@ -404,7 +424,7 @@ app.get("/fav",(req,res)=>{
    let id=req.query.id;
    let email=eemail;
    let data={
-      id:id,
+      _id:id,
       email:email
    }
    db.collection("favs").insertOne(data,(err,res)=>{
@@ -414,13 +434,29 @@ app.get("/fav",(req,res)=>{
    
 })
 app.post("/cart",(req,res)=>{
-   
+   let r=new Array();
    let query={email:eemail};
-   db.collection("favs").find(query).toArray((err,result)=>{
-      if(err) throw err;
+   
+   db.collection('favs').aggregate([
+      {$lookup:
+         {
+            from:'property_model2',
+            localField:'_id',
+            foreignField:'_id',
+            as:'f'
+         }
+      }
+   ]).toArray((err,re)=>{
+      if (err) throw err;
+      for(let i=0;i<re.length;i++){
+         if(re[i].email==eemail){
+            r.push(re[i].f);
+         }
+      }
       
+      // re.redirect("/a");
    })
-
+   console.log(r[0].property_title);
    
 })
 
@@ -491,11 +527,15 @@ app.get('/template',(req,res)=>{
    res.render('template');
 })
 app.get('/admin', (req,res) => {
-   res.render('admin',{title : 'Admin',page_name: 'admin_users'});
+   res.render('admin',{title : 'Admin | User',page_name: 'admin_users'});
 });
 
 app.get('/admin_property', (req,res) => {
-   res.render('admin_property',{title : 'Admin',page_name : 'admin_property'});
+   res.render('admin_property',{title : 'Admin | Property',page_name : 'admin_property'});
+});
+
+app.get('/admin_contactus', (req,res) => {
+   res.render('admin_contactus',{title : 'Admin | Contact Us',page_name : 'admin_contactus'});
 });
 app.get('/editprofile', (req,res) => {
    res.render('editprofile',{title : 'Edit Profile'});
