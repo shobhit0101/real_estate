@@ -379,8 +379,13 @@ app.get('/postyourproperty', (req,res) => {
 
  app.get('/login', (req,res) => {
     if(state==1){
-      
-      res.render('welcomepage',{name : namee});
+      let query={email:eemail};
+      db.collection('property_model2').find(query).toArray(function(err,result){
+                     
+            
+            
+         return res.render('welcomepage',{name : namee,data:objlogin,dataprop:result});
+      })
     }
     else
       res.render('login',{title : 'Login'});
