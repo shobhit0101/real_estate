@@ -442,3 +442,179 @@
 
 
 
+.form-body {
+    background: linear-gradient(-45deg, #f1f2eb, #eb8888, #2394d5, #e46fe1);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+.initial-container {
+    /* height: 80vh; */
+    width: 50vw;
+    background: linear-gradient(-45deg, #e6ecc7, #df895e, #af9cf0, #27a7da);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    margin: auto;
+    /* margin-top: 10vh; */
+    color: rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.form_element_box {
+    margin: 2px 0px;
+    padding: 5px;
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    /* background: linear-gradient(-45deg, #000000, #4f2d2d, #040404, #3c355a);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite; */
+    border: 3px solid black;
+    border-radius: 2px;
+    color: rgb(0, 0, 0);
+}
+
+.italic_font {
+    font-family: 'Barlow', sans-serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Josefin Slab', serif;
+font-family: 'Lexend Peta', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Square Peg', cursive;
+font-size: 25px;
+}
+
+.small_font {
+    font-size: 12px;
+}
+
+.textbox {
+    padding: 4px;
+    background: linear-gradient(-45deg, #e4eeb2, #efb79f, #cfc4f2, #aeddef);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #000000;
+    font-size: 15px;
+    width: 49vw;
+
+}
+.transparent_bg {
+    margin: 2px 0px;
+    padding: 5px;
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    border: 3px solid black;
+    border-radius: 2px;
+    color: rgb(0, 0, 0);
+}
+
+.radio_color{
+    background: linear-gradient(-45deg, #e4eeb2, #efb79f, #cfc4f2, #aeddef);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+/* .file-upload-button{
+    background: linear-gradient(-45deg, #e4eeb2, #efb79f, #cfc4f2, #aeddef);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+} */
+
+
+/* howtopost css starts here */
+
+
+
+.howtopostmaincontainer{
+    margin-top: 20px;
+    /* padding: 20px; */
+    /* border: 1px solid black; */
+}
+
+.howtoposttext{
+    text-align: center;
+}
+
+.howtopostcardContainer {
+    margin: auto;
+    padding: 0px 20px;
+    width: 100vw ;
+    height: 45vh ;
+    background: linear-gradient(-45deg, #f1f2eb, #eb8888, #2394d5, #e46fe1);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    display: flex;
+    
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.howtopost-card {
+   height: 40vh;
+   /* border: 1px solid black; */
+   background: linear-gradient(-45deg, #e4eeb2, #efb79f, #cfc4f2, #aeddef);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+   border: 0px;
+}
+
+.card-logo-howtopost{
+    height: 4rem;
+    
+}
+.title-howtopost{
+   color: #595B83;
+}
+.text-howtopost{
+   color: #03506F;
+}
+
+.postyourproperty-button{
+    text-align: center;
+    margin-bottom: 20px ;
+}
+
+.postyourproperty-button-css{
+    border: 2px solid black;
+    padding: 10px 50px;
+    background-color: #000000;
+    color: white;
+    font-size: 15px;
+   
+   
+}
+
+
+.postyourproperty-button-css:hover{
+    color: #b5fa9a;
+}
+
+/* how to post ends here */

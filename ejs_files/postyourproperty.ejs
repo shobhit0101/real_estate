@@ -1,314 +1,262 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <!-- postyourproperty.css -->
-  <link rel="stylesheet" href="css/postyourproperty.css">
+    <!-- postyourproperty.css -->
+    <link rel="stylesheet" href="css/postyourproperty.css">
 
-  <!-- logo font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@300&display=swap" rel="stylesheet">
-  <!-- bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/02ce04e7e3.js" crossorigin="anonymous"></script>
-  <title>Perfect View | <%=title %>
-  </title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Josefin+Sans:wght@100&family=Josefin+Slab:ital,wght@1,600&family=Lexend+Peta:wght@300&family=Open+Sans:wght@300;500&display=swap"
+        rel="stylesheet">
+    <!-- google fonts    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Indie+Flower&family=Josefin+Sans:wght@100&family=Josefin+Slab:ital,wght@1,600&family=Lexend+Peta:wght@300&family=Open+Sans:wght@300;500&family=Square+Peg&display=swap"
+        rel="stylesheet">
+    <title>Perfect View | <%=title %>
+    </title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon_io/site.webmanifest">
 </head>
 
-<body>
-
-  <!-- navbar -->
+<body >
+    <!-- navbar -->
   <%- include('./partials/nav'); %>
 
   <!-- CONTACT US MODAL -->
-<div class="modal fade" id="ContactUsmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h5>Name</h5>
-        <input class="form-control" type="text" placeholder="Your Name" aria-label="default input example">
-        <br>
-        <h5>Email</h5>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        <br>
-        <h5>Subject</h5>
-        <input class="form-control" type="text" placeholder="Subject" aria-label="default input example">
-        <hr>
-        <h5>Your concern</h5>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <p>After pressing the "Submit" button you can close the form by pressing the "✕" above.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Submit</button>
-      </div>
+  <%- include('./partials/ContactUs'); %>
+    <!-- form starts here -->
+    <form action="/post" method="post" enctype="multipart/form-data">
+    <div class="form-body">
+      <div class="initial-container">
+        <div class="transparent_bg">
+            <p class="italic_font" style="text-align: center; margin: 0px; font-size: 30px;"> <b>Begin posting your
+                    property</b> </p>
+        </div>
+        <div class="transparent_bg">
+            <p class="italic_font" style="text-align: center; margin: 0px;"> <b>Basic Details</b> </p>
+        </div>
+        <div class="form_element_box">
+            <label for="Purpose" class="form-label" style="margin: 0px; font-size: 14px;"><b>Purpose (you're looking
+                    to...)</b> </label>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="Sell" type="radio" name="purpose" id="" checked>
+                <label class="form-check-label small_font" for="">
+                    Sell
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="Rent" type="radio" name="purpose" id="">
+                <label class="form-check-label small_font" for="">
+                    Rent
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="PG" type="radio" name="purpose" id="">
+                <label class="form-check-label small_font" for="">
+                    PG
+                </label>
+            </div>
+        </div>
+        <div class="form_element_box">
+            <label for="PropertyCategory" class="form-label" style="margin: 0px; font-size: 14px;"> <b>Property's
+                    Category</b> </label>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="Residential" type="radio" name="prop_cat" id=""
+                    checked>
+                <label class="form-check-label small_font" for="">
+                    Residential
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="Commercial" type="radio" name="prop_cat" id="">
+                <label class="form-check-label small_font" for="">
+                    Commercial
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="Apartment" type="radio" name="prop_cat" id="">
+                <label class="form-check-label small_font" for="">
+                    Apartment
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="House" type="radio" name="prop_cat" id="">
+                <label class="form-check-label small_font" for="">
+                    House
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input radio_color" value="Land" type="radio" name="prop_cat" id="">
+                <label class="form-check-label small_font" for="">
+                    Land
+                </label>
+            </div>
+        </div>
+       
+
+        <div class="transparent_bg">
+            <p class="italic_font" style="text-align: center; margin: 0px;"> <b>Location Details</b> </p>
+        </div>
+        <div class="form_element_box">
+            <input type="text" class="form-control textbox" name="city" id="city" placeholder="City*" required><br>
+
+            <input type="text" class="form-control textbox" name="Apartment_society" id="Apartment\society"
+                placeholder="Apartment\society*" required><br>
+
+            <input type="text" class="form-control textbox" name="Locality" id="Locality" placeholder="Locality*"
+                required><br>
+
+            <input type="text" class="form-control textbox" name="sublocality" id="sublocality"
+                placeholder="Sub locality(Optional)"><br>
+
+            <input type="text" class="form-control textbox" name="houseno" id="houseno"
+                placeholder="House no.(Optional)">
+        </div>
+        <!-- Tell us about your property -->
+        <div class="transparent_bg">
+            <p class="italic_font " style="text-align: center; margin: 0px; font-size: 33px;"> <b>Tell us about your property </b>
+            </p>
+            <br>
+            <input type="text" class="form-control textbox" name="property_title" id="property_title"
+                placeholder="Property Title">
+                <br>
+            <input type="text" class="form-control textbox" name="abt_property" id="abt_property"
+                placeholder="About Property">
+                <br>
+            <input type="number" class="form-control textbox" name="property_age" id="property_age"
+                placeholder="property_age">    
+            
+        </div>
+        <div class="form_element_box">
+            <p class="italic_font" style="text-align: center; margin: 0px; font-size: 25px;"> <b>Add Room
+                Details</b> </p>
+        </div>
+        <div class="form_element_box">
+            <label for="bedrooms" style="font-size: 14px;"> <b> No.of bedrooms</b></label><br>
+            <select name="bedrooms" id="bedrooms" class="form-select selectbox textbox">
+                <option value="0">none</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="more than 5">more than 5</option>
+            </select>
+            <br>
+            <label for="bedrooms" style="font-size: 14px;"> <b> No.of bathrooms</b></label><br>
+            <select name="Bathrooms" id="Bathrooms" class="form-select selectbox textbox">
+                <option value="0">none</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="more than 5">more than 5</option>
+            </select>
+            <br>
+            <label for="bedrooms">No.of Balconies</label><br>
+
+            <select name="Balconies" id="Balconies" class="form-select selectbox textbox">
+                <option value="0">none</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="more than 5">more than 5</option>
+            </select>
+            <br>
+            <label for="bedrooms">No.of floors</label><br>
+
+            <select name="floorno" id="floorno" class="form-select selectbox textbox">
+                <option value="0">none</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="more than 5">more than 5</option>
+            </select>
+        </div>
+
+        <div class="form_element_box">
+            <p class="italic_font" style="text-align: center; margin: 0px; font-size: 25px;"> <b>Add Area
+                    Details</b> </p>
+        </div>
+        <div class="form_element_box">
+
+            <input type="text" class="textbox" style="border: 1px solid black;" name="area" id="Carpet_Area"
+                placeholder="Carpet Area">
+            <label for="Carpet_Area"></label>
+            <select class="textbox" name="Area_Unit" id="Area_Unit" size="1">
+                <option value="sq.ft">sq.ft</option>
+                <option value="sq.yards">sq.yards</option>
+                <option value="sq.m">sq.m</option>
+                <option value="acres">acres</option>
+                <option value="sq.km">sq.km</option>
+                <option value="sq.hm">sq.hm</option>
+                <option value="sq.cm">sq.cm</option>
+            </select>
+        </div>
+
+        <div class="form_element_box">
+            <p class="italic_font" style="text-align: center; margin: 0px; font-size: 25px;"> <b>Upload Photo</b>
+            </p>
+        </div>
+        <div class="form_element_box" style="text-align: center;">
+            <img src="images/collections_black_24dp.svg" alt="not found" style="height: 4rem; ">
+            <br>
+            <label for="image">Select a file:</label><br>
+            <input type="file" class="file-upload-button" name="image" id="image">
+        </div>
+        <div class="form_element_box">
+            <p class="italic_font" style="text-align: center; margin: 0px; font-size: 25px;"> <b>Pricing and ownership</b>
+            </p>
+        </div>
+        <div class="form_element_box">
+            <input type="number" class="form-control textbox" name="price" id="" placeholder="₹ Expected Price">
+            <br>
+            <input type="text" class="form-control textbox" name="owner_name" id="" placeholder="Owner's Name">
+            <br>
+            <input type="number" class="form-control textbox" name="phoneno" id="" placeholder="Phone Number">
+            
+        </div>
+
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-outline-dark "
+                style="padding: 5px 30vh; border: 3px solid black; "> <b>Submit</b></button>
+        </div>
+
+
+
     </div>
-  </div>
-</div>
-
-
-  <!-- form starts here-->
-  <form action="/post" method="post" enctype="multipart/form-data">
-    <div class="container form-container">
-      <h3 style="text-align: center;">Begin Posting your Property</h3>
-      <h4>1. Basic Details</h4>
-      <!-- <h6>Purpose   (you're looking to...)</h6> -->
-      <div class="form-section-container">
-        <label for="Purpose" class="form-label"> <strong>Purpose (you're looking to...) </strong> </label>
-        <div class="form-check">
-          <input class="form-check-input" value="Sell"  type="radio" name="purpose" id="" checked >
-          <label class="form-check-label" for="">
-            Sell
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" value="Rent" type="radio" name="purpose" id="">
-          <label class="form-check-label" for="">
-            Rent
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" value="PG" type="radio" name="purpose" id="">
-          <label class="form-check-label" for="">
-            PG
-          </label>
-        </div>
-      </div>
-
-      <div class="form-section-container">
-        <label for="PropertyCategory" class="form-label"> <strong>Property's Category</strong> </label>
-        <div class="form-check">
-          <input class="form-check-input" value="Residential" type="radio" name="prop_cat" id="" checked>
-          <label class="form-check-label" for="">
-            Residential
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" value="Commercial" type="radio" name="prop_cat" id="">
-          <label class="form-check-label" for="">
-            Commercial
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" value="Apartment" type="radio" name="prop_cat" id="">
-          <label class="form-check-label" for="">
-            Apartment
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" value="House" type="radio" name="prop_cat" id="">
-          <label class="form-check-label" for="">
-            House
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" value="Land" type="radio" name="prop_cat" id="">
-          <label class="form-check-label" for="">
-            Land
-          </label>
-        </div>
-
-      </div>
-      <h4>2. Location Details</h4>
-      <div class="form-section-container">
-
-        <input type="text" class="form-control textbox" name="city" id="city" placeholder="City*" required><br>
-
-        <input type="text" class="form-control textbox" name="Apartment_society" id="Apartment\society"
-          placeholder="Apartment\society*" required><br>
-
-        <input type="text" class="form-control textbox" name="Locality" id="Locality" placeholder="Locality*"
-          required><br>
-
-        <input type="text" class="form-control textbox" name="sublocality" id="sublocality"
-          placeholder="Sub locality(Optional)"><br>
-
-        <input type="text" class="form-control textbox" name="houseno" id="houseno" placeholder="House no.(Optional)">
-
-      </div>
-      <h4>3. Tell Us About Your Property</h4>
-      <div class="form-section-container">
-
-        <h5>Add room details</h5>
-        <label for="bedrooms">No.of bedrooms</label><br>
-        <select name="bedrooms" id="bedrooms" class="form-select selectbox">
-          <option value="0">none</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          
-
-
-        </select>
-        <br>
-        <label for="bedrooms">No.of Bathrooms</label><br>
-
-        <select name="Bathrooms" id="Bathrooms" class="form-select selectbox">
-          <option value="0">none</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          
-
-
-
-        </select>
-        <br>
-        <label for="bedrooms">No.of Balconies</label><br>
-
-        <select name="Balconies" id="Balconies" class="form-select selectbox">
-          <option value="0">none</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          
-
-
-        </select>
-      </div>
-
-      <div class="form-section-container">
-
-        <h5>Add Area details</h5>
-
-        <input type="text" name="area" id="Carpet_Area" placeholder="Carpet Area">
-        <label for="Carpet_Area"></label>
-        <select name="Area_Unit" id="Area_Unit" size="1">
-          <option value="sq.ft">sq.ft</option>
-          <option value="sq.yards">sq.yards</option>
-          <option value="sq.m">sq.m</option>
-          <option value="acres">acres</option>
-          <option value="sq.km">sq.km</option>
-          <option value="sq.hm">sq.hm</option>
-          <option value="sq.cm">sq.cm</option>
-        </select>
-
-        <h5 style="margin:10px auto">Availability Status</h5>
-        <input type="button" value="Ready to move" class="btn btn-primary">
-        <input type="button" value="Under Construction" class="btn btn-primary">
-      </div>
-
-      <h4>4. Upload Photos</h4>
-      <div class="form-section-container">
-        <img src="images/collections_black_24dp.svg" alt="not found" style="height: 4rem;">
-        <br>
-        <label for="image">Select a file:</label><br>
-        <input type="file" name="image" id="image">
-
-      </div>
-
-      <h4>5. Pricing and ownership</h4>
-      <div class="form-section-container">
-        <input type="text" class="form-control textbox" name="price" id="" placeholder="₹ Expected Price">
-        <br>
-        <input type="text" class="form-control textbox" name="phoneno" id="" placeholder="Phone Number">
-      </div>
-
-      <input type="submit" class="btn btn-success">
-
-      
-
-
     </div>
+        
+    
   </form>
-  <!-- form ends here -->
+    <!-- PostYourProperty Content Starts here -->
+
+   
+    
 
 
 
-  <!-- PostYourProperty Content Starts here -->
-  <div class="howtopostmaincontainer">
-    <div class="howtoposttext">
-      <h3 style="color: #000000;">How to Post</h3>
-      <h1 style="color: #000000">Post your property in 3 simple steps</h1>
-    </div>
-    <div class="howtopostcardContainer">
-
-
-      <div class="row">
-        <div class="col">
-          <div class="card howtopost-card">
-            <div class="card-body">
-              <img class="card-logo-howtopost" style="margin-bottom: 5px;" src="../images/article_black_24dp.svg"
-                alt="not found">
-              <br>
-              <h5 class="card-title title-howtopost">01. Add details of your property</h5>
-              <p class="card-text text-howtopost">Begin by telling us the few basic details about your property like
-                property type, location, No. of rooms etc</p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card howtopost-card">
-            <div class="card-body">
-              <img class="card-logo-howtopost" style="margin-bottom: 5px;" src="../images/collections_black_24dp.svg"
-                alt="not found">
-              <br>
-              <h5 class="card-title title-howtopost">02. Upload Photos and Videos</h5>
-              <p class="card-text text-howtopost">Upload photos and videos of your property either via your desktop
-                device or from your mobile phone.</p>
-
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card howtopost-card">
-            <div class="card-body">
-              <img class="card-logo-howtopost" style="margin-bottom: 5px;" src="../images/request_quote_black_24dp.svg"
-                alt="not found">
-              <br>
-              <h5 class="card-title title-howtopost">03. Add Pricing and Ownership</h5>
-              <p class="card-text text-howtopost">just update your property's ownership details and your expected price
-                and your property is ready for posting</p>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="postyourproperty-button">
-    <a href="postyourproperty">
-      <button type="button" class="btn postyourproperty-button-css">Begin to post your property</button>
-    </a>
-  </div>
-
-
-
-
-
-
-
-  <!-- PostYourProperty Content ends here -->
-
-
-  <script src="js/postyourproperty.js"></script>
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/postyourproperty.js"></script>
 
 </body>
 
