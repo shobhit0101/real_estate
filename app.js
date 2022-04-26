@@ -77,10 +77,10 @@ app.post("/login",(req,res)=>{
    let name=req.body.name;
    let password=req.body.passs;
    let query={username:name,password:password};
-   db.collection('users').find(query).toArray(function(err,result){
+   db.collection('user_5').find(query).toArray(function(err,result){
       if(err) throw err;
       if (result[0]==null){
-         res.render('login',{title : 'Login'});
+         res.render('login',{title : 'Login',page_name:'login'});
          // state=1;
          // name=result[0].username;
          // return res.render('welcomepage',{name : result[0].username});
@@ -116,7 +116,7 @@ app.post("/login",(req,res)=>{
 app.post("/logout",(req,res)=>{
    
    state=0;
-   res.render('login',{title : 'Login'});
+   res.render('login',{title : 'Login',page_name:'login'});
 })
 
 
@@ -125,18 +125,18 @@ let otp;let data;
 app.post("/sign_up",(req,res)=>{
    var name = req.body.signupUsername;
    var email = req.body.email;
-   
+   const phoneno=req.body.phno;
    var password = req.body.pass;
    var password2 = req.body.pass2;
    data = new User({
        username: name,
        password : password,
-       email : email
-       
+       email : email,
+       phoneno:phoneno
        
    });
 
-   // db.collection('users').insertOne(data,(err,collection)=>{
+   // db.collection('user_5').insertOne(data,(err,collection)=>{
    //     if(err){
    //         throw err;
    //     }
@@ -168,25 +168,25 @@ app.post("/sign_up",(req,res)=>{
    });
 
    // return res.render('home')
-   res.render('verification',{title : 'signup'});
+   res.render('verification',{title : 'signup',page_name:'login'});
 })
 
 //otp
 app.post("/verification",(req,res)=>{
    let votp=req.body.otp;
    if(votp==otp){
-      db.collection('users').insertOne(data,(err,collection)=>{
+      db.collection('user_5').insertOne(data,(err,collection)=>{
          if(err){
              throw err;
          }
          console.log("Record Inserted Successfully");
      });
      state=1;
-     return res.render('welcomepage',{name : data.username});
+     return res.render('welcomepage',{data : data});
    }
    else{
       // alert("Incorrect otp");
-      res.render('verification',{title : 'signup'});
+      res.render('verification',{title : 'signup',page_name:'signup'});
    }
 })
 
@@ -206,7 +206,7 @@ app.post("/mail",(req,res)=>{
    });
    var mailOptions = {
       from: 'groupfsd20@gmail.com',
-      to: eemail,
+      to: propobj.email,
       subject: 'Hey '+namee+' Someone is looking for u',
       text: 'This mail is from:\n'+name+'\n'+email+'\n'+message
     };
@@ -238,6 +238,7 @@ app.post("/post",upload.single('image'),(req,res)=>{
        no_of_bathrooms :req.body.Bathrooms,
        
        no_of_floors :req.body.Balconies,
+       no_of_balc:req.body.floorno,
        area_of_property :req.body.area,
        area_unit:req.body.Area_Unit,
        availabiltiy_status :null,
@@ -246,10 +247,11 @@ app.post("/post",upload.single('image'),(req,res)=>{
          contentType: 'image/png'
        },
        property_price :req.body.price,
-       owwner_name :null,
+       owwner_name :req.body.owwner_name,
        owner_contact_no :req.body.phoneno,
-       property_age:0,
-       abt_property:null,
+       property_age:req.body.property_age,
+       abt_property:req.body.abt_property,
+       property_title:req.body.property_title
    }
    db.collection('property_model2').insertOne(datas,(err,collection)=>{
       if(err){
@@ -258,7 +260,7 @@ app.post("/post",upload.single('image'),(req,res)=>{
       console.log("Record Inserted Successfully");
    });
       //join databases
-   db.collection('users').aggregate([
+   db.collection('user_5').aggregate([
       {$lookup:
          {
             from:'property_model2',
@@ -269,7 +271,7 @@ app.post("/post",upload.single('image'),(req,res)=>{
       }
    ]).toArray((err,re)=>{
       if (err) throw err;
-      console.log(re);
+      
       
       // re.redirect("/a");
    })
@@ -285,15 +287,16 @@ app.post("/search",(req,res)=>{
    let query={city:city};
    db.collection('property_model2').find(query).toArray(function(err,result){
       
-      res.render('template',{title : city,data:result});
+      res.render('template',{title : city,data:result,page_name:'home'});
    });
 }) 
  //to get to view property
+let propobj;
 app.get("/v",(req,res)=>{
    let city=req.query.a;
    let query={city:city};
    db.collection('property_model2').find(query).toArray(function(err,result){
-      
+      propobj=result[req.query.obj];
       res.render('viewproperty',{data:result[req.query.obj],title:'viewproperty'});
    });
     
@@ -318,17 +321,31 @@ app.get("/a",(req,res)=>{
    });
 })
 //updation
-app.post('/update',(req,res)=>{
-   let i=req.query.obj;
-   let myquery = { email: eemail };
-   let newv = { $set: { i: "Canyon 123" } };
-   db.collection("customers").updateOne(myquery, newv, function(err, resp) {
+app.post('/update_name',(req,res)=>{
+   
+   let myquery = { username: objlogin.username };
+   let newv = { $set: { username: req.body.name } };
+   db.collection("user_5").updateOne(myquery, newv, function(err, resp) {
       if(err) throw err;
+      objlogin.username=req.body.name;
       console.log(resp);
    });
+   res.redirect("/login");
+})
+app.post('/update_contact',(req,res)=>{
    
+   let myquery = { phoneno: objlogin.phoneno };
+   let newv = { $set: { phoneno: req.body.contact } };
+   db.collection("user_5").updateOne(myquery, newv, function(err, resp) {
+      if(err) throw err;
+      objlogin.phoneno=req.body.contact;
+      console.log(resp);
+   });
+   res.redirect("/login")
 })
 //
+
+
 //deletion
 app.get('/del',(req,res)=>{
    
@@ -355,6 +372,61 @@ app.get("/admin_property",(req,res)=>{
    });
 });
 //
+//sorting
+app.get("/sort_price_a",(req,res)=>{
+   let data=req.query.ids;
+
+   console.log(data[0]);
+}) 
+// 
+//Contact US
+app.post("/contact_us_send",(req,res)=>{
+   let name=req.body.name;
+   let email=req.body.email;
+   let subject=req.body.subject;
+   let concern=req.body.concern;
+   let data={
+      name:name,
+      email:email,
+      subject:subject,
+      concern:concern
+   }
+   db.collection("contact").insertOne(data,(err,resp)=>{
+      if(err) throw err;
+      console.log("contact done");
+   })
+   res.redirect("/");
+})
+//
+
+//Favorites(CART)
+app.get("/fav",(req,res)=>{
+   let id=req.query.id;
+   let email=eemail;
+   let data={
+      id:id,
+      email:email
+   }
+   db.collection("favs").insertOne(data,(err,res)=>{
+      if(err) throw err;
+      console.log("inserted");
+   })
+   
+})
+app.post("/cart",(req,res)=>{
+   
+   let query={email:eemail};
+   db.collection("favs").find(query).toArray((err,result)=>{
+      if(err) throw err;
+      
+   })
+
+   
+})
+
+//
+
+
 //routes
 
 app.get('/', (req,res) => {
@@ -399,7 +471,7 @@ app.get('/p',(req,res)=>{
                   
          
          
-         res.render('template',{title : namee,data:result});
+         res.render('template',{title : namee,data:result,page_name:'home'});
       })
    }
    else{
