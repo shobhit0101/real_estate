@@ -31,15 +31,15 @@
             <!-- <hr> -->
             <div class="row" style="margin-top: 23px;">
                 <div class="col-3 border-end border-1 ps-5">
-                    <div class="row-4">50lac</div>
-                    <div class="row-1">Emi</div>
+                    <div class="row-4"><%=data.property_category%></div>
+                    <div class="row-1" style="font-size: 20px;" ><%=data.purpose%></div>
                     <div class="row-1"></div>
                 </div>
 
                 <div class="col-7 ps-5">
-                    <div class="row-4">2 bhk 4 baths</div>
-                    <div class="row-1">Residential Apartment</div>
-                    <div class="row-1">in jnl,jnl,mumbai</div>
+                    <div class="row-4"><%=data.property_title%></div>
+                    <div class="row-1">City : <%=data.city%></div>
+                    <div class="row-1">Locality : <%=data.locality%> </div>
                 </div>
                 <div class="col-2">
 
@@ -129,8 +129,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-11">
-                                                        <%=data.no_of_bedrooms%> bedroom, <%=data.no_of_bathrooms%>
-                                                                bathroom, <%=data.no_of_floors%> balcony
+                                                        <%=data.no_of_bedrooms%> bedroom , <%=data.no_of_bathrooms%> bathroom , <%=data.no_of_floors%> balcony 
                                                     </div>
                                                 </div>
 
@@ -207,7 +206,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    1 Year
+                                                     <%=data.property_age%>
                                                 </div>
                                             </div>
                                         </div>
@@ -223,10 +222,10 @@
                             <h3>About Property</h3>
                         </div>
                         <div class="row pt-2">
-                            <h5>Address: </h5>
+                            <h5>Address: <%=data.city%> , <%=data.locality%> , <%=data.subloc%> , <%=data.apart%></h5>
                         </div>
                         <div class="row ps-3 mb-5">
-                            ................................
+                              <h5><%=data.abt_property%></h5>
                         </div>
                     </div>
                 </div>
@@ -240,15 +239,15 @@
                                     </div>
                                     <div class="col mt-5 pt-5">
                                         <div class="row mt-5 pt-4">
-                                            <h6>Shobhit Gupta</h6>
+                                            <h3><%=data.owner_name%></h3>
                                         </div>
                                         <div class="row  ms-2">
-                                            Owner
+                                         
                                         </div>
                                         <div class="row mt-4 pt-3">
                                             <button type="button" class="btn btn-secondary" data-bs-container="body"
                                                 data-bs-toggle="popover" data-bs-placement="top"
-                                                data-bs-content="9928500000">
+                                                data-bs-content="<%=data.owner_contact_no%>">
                                                 View Phone No.
                                             </button>
                                         </div>

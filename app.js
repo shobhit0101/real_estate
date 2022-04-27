@@ -204,6 +204,7 @@ app.post("/mail",(req,res)=>{
         pass: 'Grp1234#'
       }
    });
+   console.log(propobj.email);
    var mailOptions = {
       from: 'groupfsd20@gmail.com',
       to: propobj.email,
@@ -218,7 +219,7 @@ app.post("/mail",(req,res)=>{
       console.log('Email sent: ' + info.response);
    }
    });
-   res.render('home',{title : 'Home'});
+   res.render('home',{title : 'Home',page_name:'home'});
 })
 //
 
@@ -247,7 +248,7 @@ app.post("/post",upload.single('image'),(req,res)=>{
          contentType: 'image/png'
        },
        property_price :req.body.price,
-       owwner_name :req.body.owwner_name,
+       owner_name :req.body.owner_name,
        owner_contact_no :req.body.phoneno,
        property_age:req.body.property_age,
        abt_property:req.body.abt_property,
@@ -275,8 +276,9 @@ app.post("/post",upload.single('image'),(req,res)=>{
       
       // re.redirect("/a");
    })
+   console.log(datas.email);
    res.render('viewproperty',{data:datas,title:'viewproperty'});
-   
+  
 
           
       
@@ -294,6 +296,9 @@ app.post("/search",(req,res)=>{
       //to get to view property
 let propobj;
 app.get("/v",(req,res)=>{
+   if(state==0){
+      res.redirect("/login");
+   }
    let city=req.query.a;
    let query={city:city};
    db.collection('property_model2').find(query).toArray(function(err,result){
@@ -424,7 +429,7 @@ app.get("/fav",(req,res)=>{
    let id=req.query.id;
    let email=eemail;
    let data={
-      _id:id,
+      id:id,
       email:email
    }
    db.collection("favs").insertOne(data,(err,res)=>{
@@ -433,7 +438,7 @@ app.get("/fav",(req,res)=>{
    })
    
 })
-app.post("/cart",(req,res)=>{
+app.get("/cart",(req,res)=>{
    let r=new Array();
    let query={email:eemail};
    
@@ -441,7 +446,7 @@ app.post("/cart",(req,res)=>{
       {$lookup:
          {
             from:'property_model2',
-            localField:'_id',
+            localField:'id',
             foreignField:'_id',
             as:'f'
          }
