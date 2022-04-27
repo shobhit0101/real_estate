@@ -428,40 +428,54 @@ app.post("/contact_us_send",(req,res)=>{
 app.get("/fav",(req,res)=>{
    let id=req.query.id;
    let email=eemail;
-   let data={
-      id:id,
-      email:email
-   }
-   db.collection("favs").insertOne(data,(err,res)=>{
-      if(err) throw err;
-      console.log("inserted");
+   let datas;
+   db.collection("property_model2").find(query).toArray((err,d)=>{
+      for(let i=0;i<d.length;i++){
+         if(d[i]==req.query.id){
+            datas=d[i];
+         }
+      }
+
    })
    
+   db.collection('favo').insertOne(datas,(err,collection)=>{
+     if(err){
+         throw err;
+     }
+     console.log("Record Inserted Successfully");
+  });
+   
+   
 })
+
 app.get("/cart",(req,res)=>{
    let r=new Array();
    let query={email:eemail};
-   
-   db.collection('favs').aggregate([
-      {$lookup:
-         {
-            from:'property_model2',
-            localField:'id',
-            foreignField:'_id',
-            as:'f'
-         }
+   let gh; //for objects
+   db.collection("favs").find(query).toArray((err,d)=>{
+      console.log(d);
+      for(let i=0;i<d.length;i++){
+         r.push(d[i].id);
       }
-   ]).toArray((err,re)=>{
-      if (err) throw err;
-      for(let i=0;i<re.length;i++){
-         if(re[i].email==eemail){
-            r.push(re[i].f);
-         }
+      console.log(r);
+      for(let j=0;j<r.length;j++){
+         
+         db.collection("property_model2").find().toArray((err,dres)=>{
+            for(let k=0;k<dres.length;k++){
+               if(dres[k]._id==r[j]){
+                  
+                  
+               }
+            }
+         })
       }
-      
-      // re.redirect("/a");
+      console.log(gh);
    })
-   console.log(r[0].property_title);
+   
+   console.log(r);
+      // re.redirect("/a");
+   
+   
    
 })
 
