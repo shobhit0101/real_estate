@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
    extended:true
 }))
 //connect to mongodb
-const dbURI='mongodb+srv://Vital:Vital@realestate.bhuwn.mongodb.net/real_database?retryWrites=true&w=majority';
+const dbURI='mongodb+srv://Grp201234:Grp201234@cluster0.rqes2gp.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(dbURI , { useNewUrlParser: true, useUnifiedTopology: true })
 .then((result) =>  app.listen(3000 ))
 .catch((err)=>console.log(err));
@@ -149,7 +149,7 @@ app.post("/sign_up",(req,res)=>{
       service: 'gmail',
       auth: {
         user: 'groupfsd20@gmail.com',
-        pass: 'Grp1234#'
+        pass: 'fqqxvsztuwugsgvt'
       }
    });
    var mailOptions = {
